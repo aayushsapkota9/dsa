@@ -1,3 +1,4 @@
+// lecture 58
 #include <stdio.h>
 void funB(int);
 void funA(int n)
