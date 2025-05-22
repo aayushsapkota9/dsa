@@ -20,32 +20,18 @@ public:
     void push(int n)
     {
         Node *current = new Node(n);
-        if (top == NULL)
-        {
-            top = current;
-            return;
-        }
-        else
-        {
-            Node *temp = top;
-            while (temp->next != NULL)
-            {
-                temp = temp->next;
-            }
-            temp->next = current;
-        }
+        current->next = top;
+        top = current;
     }
     void pop()
     {
-        Node *temp = top, *prev;
-        while (temp != NULL)
+        if (top->next == NULL)
         {
-            prev = temp;
-            temp = temp->next;
+            cout << "Stack underflow";
+            return;
         }
-        cout << prev->value;
-        prev->next = NULL;
-        // cout << temp->value;
+        cout << top->value;
+        top = top->next;
     }
     void display()
     {
@@ -53,7 +39,7 @@ public:
         cout << "Stack: ";
         while (temp != NULL)
         {
-            cout << temp->value << " ";
+            cout << temp->value;
             temp = temp->next;
         }
         cout << endl;
