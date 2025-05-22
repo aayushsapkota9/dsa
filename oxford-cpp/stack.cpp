@@ -9,7 +9,7 @@ private:
     int arr[MAX];
 
 public:
-    void enqueue(int n)
+    void push(int n)
     {
         if (top >= MAX - 1)
         {
@@ -22,7 +22,7 @@ public:
             arr[top] = n;
         }
     }
-    void dequeue()
+    void pop()
     {
         if (top <= -1)
         {
@@ -47,17 +47,17 @@ int main()
 {
     STACK s1;
     int i;
-    // enqueuing 5 elements using loop
+    // Pushing 5 elements using loop
     for (i = 0; i < 5; i++)
     {
-        s1.enqueue(i);
+        s1.push(i);
     }
     // displaying those elements
     s1.display();
-    // Dequeuing 5 elements using loop
-    cout << "Dequeue \n";
+    // Popping 5 elements using loop
+    cout << "Popping \n";
     for (i = 0; i < 5; i++)
     {
-        s1.dequeue();
+        s1.pop();
     }
 }
