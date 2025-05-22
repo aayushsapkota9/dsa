@@ -36,9 +36,23 @@ public:
             temp->next = current;
         }
     }
-    void deleteNode()
+    void deleteNode(int n)
     {
+        Node *temp = head, *prev, *next;
+        int count = 0;
+        while (temp->next != NULL)
+        {
+            prev = temp;
+            count++;
+            temp = temp->next;
+            next = temp->next;
+            if (count == n)
+            {
+                break;
+            }
         }
+        prev->next = next;
+    }
     void display()
     {
         Node *temp = head;
@@ -55,5 +69,6 @@ int main()
     l1.insertNode(1);
     l1.insertNode(2);
     l1.insertNode(3);
+    l1.deleteNode(1);
     l1.display();
 }
